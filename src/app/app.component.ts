@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HardcodedAuthenticationService } from './service/hardcoded-authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'musical-instrument-app';
+  title = 'amazing-animal-paintings';
+  constructor(protected hardcodedAuthenticationService : HardcodedAuthenticationService){}
 }

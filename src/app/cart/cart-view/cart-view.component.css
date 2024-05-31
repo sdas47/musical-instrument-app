@@ -1,0 +1,17 @@
+.price {
+    font-weight: 800;
+}
+
+.product-card {
+    max-width: 150px;
+    margin: 10px 20px;
+}
+
+.mat-card {
+    background: rgb(189, 252, 238);
+}
+
+.cart-table {
+    background: rgb(242, 252, 189);
+}
+

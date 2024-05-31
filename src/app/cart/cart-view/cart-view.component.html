@@ -1,0 +1,60 @@
+<div class="container-sm">
+    <h1>Your Cart</h1>
+    <div fxLayout="row wrap" fxLayoutGap="50px grid">
+
+        <table border="5" bordercolor="lightblue" class="table activitites"  >
+            <thead>
+                <tr>
+                    <th scope="col" class="text-uppercase header">Item</th>
+                    <th scope="col" class="text-uppercase">Price(INR)</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let cartItem of cartItems">
+                <tr>
+                    <td>
+                        <img mat-card-md-image src="assets/images/{{cartItem.img}}">
+                        <div>{{cartItem.name}}</div>
+                        
+                    </td>
+                    <td>
+                        <div>{{cartItem.price}}</div>
+                    </td>
+                    <td>
+                        <button mat-flat-button class="btn btn-outline-danger" (click)="removeItem(cartItem)"><i class="material-icons">delete</i></button>
+                    </td>
+                </tr>
+                
+            </tbody>
+            </table>
+        
+            <!-- <mat-card class="product-card mat-elevation-z10" *ngFor="let cartItem of cartItems">    
+                <img mat-card-md-image src="assets/images/{{cartItem.img}}">
+                <mat-card-content>
+                    <mat-card-title>{{cartItem.name}}</mat-card-title>
+                    <mat-card-subtitle>{{cartItem.price | currency:'INR'}}</mat-card-subtitle>
+                    <mat-card-subtitle>{{cartItem.seller}}</mat-card-subtitle>
+                    <mat-card-subtitle>{{cartItem.location}}</mat-card-subtitle>
+                </mat-card-content>
+            </mat-card> -->
+        
+    </div>
+    <mat-card class="mat-card">
+        <mat-list>
+            <!--<mat-list-item *ngFor="let cartItem of cartItems">
+                <img matListAvatar src="assets/images/{{cartItem.img}}"><p>
+                <span matListItemTitle>{{cartItem.name}}</span>
+                <span matListItemLine>{{cartItem.price | currency:'INR'}}</span>
+            </mat-list-item>-->
+            <mat-list-item>
+                <span class="price" matListItemTitle>Total Price(INR)</span>
+                <span class="price" matListItemLine>{{totalPrice | currency:'INR'}}</span>
+            </mat-list-item>
+            <mat-list-item class="text-right">
+                <button mat-flat-button class="btn btn-outline-warning" (click)="clearCart()">Clear</button>
+            </mat-list-item>
+            <mat-list-item class="text-right">
+                <button mat-raised-button class="btn btn-outline-info"color="accent" (click)="checkOut()">Checkout</button>
+            </mat-list-item>
+        </mat-list>
+    </mat-card>
+</div>>
